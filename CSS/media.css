@@ -33,7 +33,7 @@
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Media 1 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
   html {
     --color-hue: 0%;
     --color-sat: 100%;
@@ -47,6 +47,7 @@
     --sec-color: hsl(var(--color-hue), var(--color-sat), var(--color-light));
     font-family: "Roboto", "Open Sans", sans-serif;
     --font-size-normal: 1rem;
+    font-size: 1rem;
   }
   /*.............................  Header & nav ..............................*/
   .logo-word {
