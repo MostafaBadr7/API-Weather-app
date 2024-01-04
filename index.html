@@ -1,0 +1,249 @@
+<!--  
+* Route - Frontend
+* JS program Week 9
+* Weather Web APP 
+* JS + Bootstrap + Ajax + APIs
+* 23/12/2023
+* Weather page JS 
+* Mostafa Badr >> LinkedIn:  
+* Mostafa Badr >> GitHub:  
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather app</title>
+    <!--------------------------- font awesome --------------------------------->
+    <link rel="stylesheet" href="./css-Bootstrap-Fontawesome/all.min.css" />
+    <!----------------------------- Bootstrap ---------------------------------->
+    <link
+      rel="stylesheet"
+      href="./css-Bootstrap-Fontawesome/bootstrap.min.css"
+    />
+    <!----------------------------- Font Family Link ---------------------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Satisfy&display=swap"
+      rel="stylesheet"
+    />
+    <!----------------------------- Weather API icons ---------------------------------->
+    <link
+      rel="stylesheet" href="https://www.weatherapi.com/docs/weather_conditions.csv"/>
+    <!-- One External stylesheet includes import function of others css files -->
+    <link rel="stylesheet" href="./CSS/index.css" />
+    <link rel="stylesheet" href="./CSS/media.css" />
+  </head>
+  <body>
+    <!----------------------------------- بسم الله -------------------------------------->
+    <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Header <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<-->
+    <header class="sec-bkgrnd-color vw-100">
+      <nav
+        class="container d-flex justify-content-between align-items-center flex-wrap pb-3"
+      >
+        <!--------------------------------- Logo ---------------------------------------->
+        <div  class="logo-div d-flex  align-self-end pb-1 ">
+          <div class="logo-img-div pe-0 "><img class="logo-img main-color-word " src="./Images/cloud-computing_2797639.png" alt="">
+          </div>
+          <div class="">
+            <li
+            class="logo-word main-color rounded-4  list-unstyled d-flex flex-column"
+          >
+           <a class="text-decoration-none words-color" href="#home">Weather</a> 
+          </li>
+          <span class="words-color">tagline goes here</span>
+          </div>
+          
+        </div>
+
+        <!-------------------------------Desktop Nav lists ------------------------------------->
+        <div class="nav-lists-div d-flex pt-4">
+          <ul
+            class="d-flex justify-content-between list-unstyled words-color align-items-center"
+          >
+            <a class="home text-decoration-none" href="#home"
+              ><li class="px-2 me-3">Home</li></a
+            >
+            <a class="text-decoration-none" href="">
+              <li class="px-2 me-3">News</li></a
+            >
+            <a class="text-decoration-none" href=""
+              ><li class="px-2 me-3">Live Cameras</li></a
+            >
+            <a class="text-decoration-none" href="">
+              <li class="px-2 me-3">photos</li></a
+            >
+            <a class="text-decoration-none" href="#contact">
+              <li class="px-2 text-center">Contact</li></a
+            >
+          </ul>
+          <div class="mobile-menu-icon">
+            <i class="menu-icon fa-solid fa-bars words-color pb-3 mb-0 pt-0"></i>
+          </div>
+        </div>
+        <!-------------------------------Mobile Nav lists ------------------------------------->
+        <div
+          class="nav-lists-mobile d-flex justify-content-center w-100 dissappear"
+        >
+          <ul
+            class="d-flex flex-column justify-content-center align-items-center list-unstyled words-color header-bkgrnd-color rounded-top-3 rounded-bottom-3 w-100"
+          >
+            <a class="nav-item-a text-decoration-none w-100 text-center" href="#home"
+              ><li class="px-2 py-3">Home</li></a
+            >
+            <a
+              class="nav-item-a text-decoration-none w-100 text-center"
+              href=""
+            >
+              <li class="px-2 py-3">News</li></a
+            >
+            <a class="nav-item-a text-decoration-none w-100 text-center" href=""
+              ><li class="px-2 py-3 w-100">Live Cameras</li></a
+            >
+            <a
+              class="nav-item-a text-decoration-none w-100 text-center"
+              href=""
+            >
+              <li class="px-2 py-3">photos</li></a
+            >
+            <a
+              class="nav-item-a text-decoration-none w-100 text-center"
+              href="#contact"
+            >
+              <li class="px-2 py-3 text-center border-bottom-0">Contact</li></a
+            >
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Main Secion <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<-->
+    <main class="data-section vw-100 pb-5">
+      <div class="container">
+        <div id="home"  class="position-relative pt-5">
+          <button
+            class="search-button search-btn btn rounded-pill text-center d-flex align-items-center justify-content-center main-color words-color position-absolute"
+          >
+            find
+          </button>
+          <input
+            class="search-input search-box rounded-pill words-color"
+            placeholder="find your location"
+            type="text"
+          />
+          <div class="error-msg position-absolute ms-2 text-white  word-font-size fw-bolder"></div>
+        </div>
+        <div class="weather-main-div mt-5 words-color d-flex">
+        <!------------------------------- First Day ------------------------------------->
+          <div class="weather-day-div weath-div1 main-bkgrnd-color rounded-start-2">
+            <div
+              class="day-date d-flex justify-content-between p-1 muted-color-word"
+            >
+              <div class="today-name">Monday</div>
+              <div class="today-num-month"">1 January</div>
+            </div>
+            <div class="weather-data-div d-flex flex-column p-2">
+              <div class="location muted-color-word word-font-size">Cairo</div>
+              <div class="degree d-flex flex-column">
+                <div class="_1st-day-media">
+                <span class="celiouz c-css fw-bold"
+                  ><span class="celiouz c-js fw-bold">17.7</span
+                  ><sup>o</sup>C</span
+                >
+                <img
+                  class="condition-img w-50 p-0 m-0"
+                  src="./Images/night/113.png"
+                  alt=""
+                />
+              </div>
+                <span class="weather-status main-color-word "
+                  >Partly cloudy</span
+                >
+              </div>
+              <div class="weather-addons d-flex muted-color-word word-font-size pt-2 ">
+                <div class="d-flex align-items-center">
+                  <i class="addons-icons fa-solid fa-umbrella pe-1"></i><span class="rain pe-3 "></span>
+                </div>
+                <div class="d-flex align-items-center">
+                  <i class="addons-icons fa-solid fa-wind pe-1"></i><span class="wind pe-3 "></span>
+                </div>
+                <div class="d-flex align-items-center">
+                  <i class="addons-icons fa-solid fa-compass pe-1 "></i><span class="direction pe-3 "></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!------------------------------- Second Day ------------------------------------->
+          <div class="weather-day-div weath-div2 sec-bkgrnd-color">
+            <div class="day-date p-1 muted-color-word">
+              <div class="second-day text-center">Tuesday</div>
+            </div>
+            <div
+              class="weather-data-div-2 d-flex flex-column justify-content-center align-items-center p-2 "
+            >
+              <div class="degree-2 py-2 d-flex align-items-center flex-column ">
+                <img class="forecast-days-img w-75 pb-2" src="./Images/day/116.png" alt="" />
+                <span class="forecast-days-deg fw-bold">21.7<sup>o</sup>C</span>
+              </div>
+              <div class="weather-status py-2 main-color-word">
+                Partly cloudy
+              </div>
+              <div class="weather-addons"></div>
+            </div>
+          </div>
+        <!------------------------------- Third Day ------------------------------------->
+          <div class="weather-day-div weath-div3 header-bkgrnd-color rounded-end-2">
+            <div class="day-date p-1 muted-color-word">
+              <div class="_3rd-day text-center">Tuesday</div>
+            </div>
+            <div
+              class="weather-data-div-2 d-flex flex-column justify-content-center align-items-center p-2  "
+            >
+              <div
+                class="degree-2 py-2 d-flex flex-column text-center align-items-center"
+              >
+                <img class="forecast-days-img w-75 pb-2" src="./Images/day/116.png" alt="" />
+                <span class="forecast-days-deg fw-bold">21.7<sup>o</sup>C</span>
+              </div>
+              <div class="weather-status py-2 main-color-word">
+                Partly cloudy
+              </div>
+              <div class="weather-addons"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Footer Secion <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<-->
+    <footer  class="main-bkgrnd-color vw-100 overflow-hidden">
+      <div class="footer-main-div d-flex flex-row flex-wrap container pt-4 flex-wrap">
+      <div id="contact" class="footer-input-area position-relative  w-75 ">
+          <button
+            class="subscribe-button  btn rounded-pill text-center d-flex align-items-center justify-content-center main-color words-color position-absolute p-2"
+          >
+            Subscribe
+          </button>
+          <input
+            class="search-input search-box rounded-pill words-color"
+            placeholder="Enter your email to subscribe.."
+            type="text"
+          />
+      </div>
+      <div class="footer-icons-main-div w-25 d-flex justify-content-center align-items-center">
+        <div class="footer-icons-divs rounded-circle d-flex justify-content-center align-items-center p-1 sec-bkgrnd-color me-1"><i class="footer-icons fa-brands fa-facebook-f fa-fw word-font-size main-color-word"></i></div>
+        <div class="footer-icons-divs rounded-circle d-flex justify-content-center align-items-center p-1 sec-bkgrnd-color me-1"><i class="footer-icons  fa-brands fa-twitter fa-fw word-font-size main-color-word"></i></div>
+        <div class="footer-icons-divs rounded-circle d-flex justify-content-center align-items-center p-1 sec-bkgrnd-color me-1"><i class="footer-icons  fa-brands fa-google-plus fa-fw word-font-size main-color-word"></i></div>
+        <div class="footer-icons-divs rounded-circle d-flex justify-content-center align-items-center p-1 sec-bkgrnd-color me-1"><i class="footer-icons  fa-brands fa-pinterest fa-fw word-font-size main-color-word"></i></div>
+      </div>
+      <div class="copyright pt-3 word-font-size words-color pb-4">
+        Copyright 2014 Company name. Designed by Themezy. All rights reserved
+      </div>
+    </div>
+    </footer>
+
+    <!------------------------------ JS FILES---------------------------- -->
+
+    <script src="./JS-Bootstrap-Fontawesome/all.min.js"></script>
+    <script src="./JS-Bootstrap-Fontawesome/bootstrap.min.js"></script>
+    <script src="./JS/index.js"></script>
+  </body>
+</html>

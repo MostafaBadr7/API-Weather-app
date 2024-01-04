@@ -1,0 +1,227 @@
+/*  
+* Route - Frontend
+* JS program Week 9
+* Weather Web APP 
+* JS + Bootstrap + Ajax + APIs
+* 23/12/2023
+* Weather page JS 
+* Mostafa Badr >> LinkedIn:  
+* Mostafa Badr >> GitHub:  
+*/
+/* Global */
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* ................. You can change the main color from here .....................*/
+.main-color {
+  background-color: var(--main-color) !important;
+}
+.header-bkgrnd-color {
+  background-color: var(--main-background-color);
+}
+.sec-bkgrnd-color {
+  background-color: var(--sec-background-color);
+}
+.words-color {
+  color: var(--words-color);
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Media 1 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
+@media screen and (max-width: 600px) {
+  html {
+    --color-hue: 0%;
+    --color-sat: 100%;
+    --color-light: 50%;
+    --main-color: #009ad8;
+    --header-background-color: #1e202b;
+    --third-background-color: #0000001a;
+    --main-background-color: #262936;
+    --sec-background-color: #1e2028;
+    --words-color: #fff;
+    --sec-color: hsl(var(--color-hue), var(--color-sat), var(--color-light));
+    font-family: "Roboto", "Open Sans", sans-serif;
+    --font-size-normal: 1rem;
+  }
+  /*.............................  Header & nav ..............................*/
+  .logo-word {
+    margin: 1.9rem 0 0 0;
+    font-size: 1.2rem !important;
+    text-align: center;
+    background-color: #fff;
+  }
+  .logo-word + span {
+    font-size: 0.7rem !important;
+  }
+  .logo-img {
+    margin-top: 12px !important;
+    padding: 0 !important;
+  }
+  .logo-img-div {
+    align-self: center !important;
+  }
+  /*.............................  Mobile nav ..............................*/
+
+  .mobile-menu-icon {
+    opacity: 1 !important;
+    margin: 0rem 0 0 0;
+    visibility: visible !important;
+    font-size: 1.5rem !important;
+  }
+  .nav-lists-div ul {
+    display: none !important;
+  }
+  .nav-lists-mobile {
+    padding: 0.7rem 0 0 0;
+    margin: 0 0 2rem 0;
+  }
+  .menu-icon {
+    padding-bottom: 0 !important;
+    padding-top: 0.5rem;
+  }
+  .nav-lists-mobile ul {
+    position: relative !important;
+    top: 5px;
+    transition: all 0.2s ease-in-out !important;
+  }
+  .ul-transition {
+    top: 20px !important;
+    transition: all 0.2s ease-in-out !important;
+  }
+  .nav-lists-mobile ul li {
+    font-size: 1rem !important;
+  }
+  .nav-lists-mobile ul li:hover {
+    background-color: #009ad8 !important;
+  }
+  .dissappear {
+    display: block !important;
+    max-height: 0px !important;
+    overflow: hidden !important;
+    transition: max-height 1s cubic-bezier(0, 1, 0, 1);
+  }
+  .display {
+    max-height: 99em !important;
+    transition: max-height 1.5s ease-in-out;
+  }
+  .nav-lists-mobile {
+    display: block !important;
+  }
+  .nav-item-a:hover {
+    outline: 0;
+  }
+  /*............................. Weather Main Section ..............................*/
+  .weather-main-div {
+    display: flex;
+    flex-direction: column;
+  }
+  .weather-day-div {
+    width: 100% !important;
+  }
+  .weath-div1 {
+    border-top-right-radius: 0.4rem;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+  .weath-div2 {
+    border-radius: 0 !important;
+  }
+  .weath-div3 {
+    border-radius: 0 !important;
+  }
+  .weather-data-div-2 {
+    width: 20%;
+  }
+  ._1st-day-media {
+    display: row !important;
+    justify-content: space-between !important;
+  }
+  .celiouz {
+    font-size: 4.5rem !important;
+  }
+  .weather-data-div-2 {
+    text-align: center !important;
+    width: 100%;
+    padding-top: 1.4rem !important;
+  }
+  .degree-2 + div {
+    padding-bottom: 1rem !important;
+  }
+  .degree-2 {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .footer-input-area {
+    width: 100% !important  ;
+    margin-bottom: 10px;
+  }
+  .footer-main-div {
+    flex-direction: column !important;
+  }
+  .direction,
+  .wind,
+  .rain {
+    font-size: 0.8rem !important;
+    padding-bottom: 15px;
+  }
+  .addons-icons {
+    font-size: 1.2rem !important;
+    padding-right: 0.8rem !important;
+    padding-bottom: 15px;
+  }
+  .weather-status {
+    font-size: 1rem !important ;
+  }
+  .forecast-days-img {
+    padding-bottom: 1rem !important;
+    width: 100% !important;
+  }
+  .condition-img {
+    margin-left: 15px !important;
+    margin-bottom: 35px !important;
+    width: 2000px !important;
+    width: 30% !important;
+    padding-left: 1rem !important;
+  }
+  .location {
+    font-size: var(--font-size-normal) !important;
+    padding-top: 10px;
+  }
+  .weather-data-div {
+    padding: 1rem !important;
+  }
+  .weather-status {
+    font-size: var(--font-size-normal);
+    padding-bottom: 1rem;
+  }
+  /*............................................ Footer .....................................*/
+  .footer-icons {
+    font-size: var(--font-size-normal);
+  }
+  .footer-icons-main-div {
+    padding-left: 1rem;
+  }
+  .copyright {
+    padding-left: 0.8rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Media 3 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
+@media screen and (max-width: 290px) {
+  /* ---------------------------  --------------------------------------- */
+
+  /* -------------------------------------------------------------------------- */
+
+  /*................................ .......................................*/
+
+  /*..................................  .....................................*/
+}

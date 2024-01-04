@@ -1,0 +1,198 @@
+/*  
+* Route - Frontend
+* JS program Week 9
+* Weather Web APP 
+* JS + Bootstrap + Ajax + APIs
+* 23/12/2023
+* Weather page JS 
+* Mostafa Badr >> LinkedIn:  
+* Mostafa Badr >> GitHub:  
+*/
+
+/* Import other CSS files*/
+/* Fonts */
+/* ---------------------------------------------------------------------------------- */
+
+/* Global */
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  --color-hue: 197;
+  --color-sat: 100%;
+  --color-light: 42%;
+  --main-color: hsl(197, 100%, 42%);
+  --muted-color: #bfc1c8;
+  --header-background-color: #1e202b;
+  --third-background-color: #0000001a;
+  --main-background-color: #262936;
+  --sec-background-color: #1e2028;
+  --words-color: #fff;
+  --sec-color: hsl(var(--color-hue), var(--color-sat), var(--color-light));
+  font-family: "Roboto", "Open Sans", sans-serif;
+  --font-size-normal: 0.5rem;
+  scroll-behavior: smooth;
+}
+.btn {
+  box-shadow: 0px 0px 8px var(--main-color);
+}
+.btn:hover {
+  box-shadow: 0px 0px 0px var(--main-color);
+}
+/* ................. You can change the main color from here .....................*/
+.main-color {
+  background-color: var(--main-color) !important;
+}
+.main-color-word {
+  color: var(--main-color);
+}
+.muted-color-word {
+  color: var(--muted-color);
+}
+.header-bkgrnd-color {
+  background-color: var(--header-background-color);
+}
+.sec-bkgrnd-color {
+  background-color: var(--sec-background-color);
+}
+.words-color {
+  color: var(--words-color);
+}
+.main-bkgrnd-color {
+  background-color: var(--main-background-color);
+}
+.word-font-size {
+  font-size: 0.6rem;
+}
+
+/* ................. Header & nav .....................*/
+
+.logo-word {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.logo-word + span {
+  font-size: 0.4rem;
+}
+nav li {
+  font-size: var(--font-size-normal);
+  color: var(--words-color);
+  border: 1px transparent solid;
+}
+.nav-lists-div li:hover {
+  color: var(--main-color);
+  border: 1px solid var(--main-color) !important;
+  transition: border 0.5 s;
+  border-radius: 7px;
+  border: 1px var(--words-color) solid;
+}
+
+.mobile-menu-icon {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.nav-lists-mobile a li {
+  border-bottom-color: rgba(128, 128, 128, 0.293) !important;
+}
+.nav-lists-mobile a li:hover {
+  outline: 0;
+}
+.dissappear {
+  display: block !important;
+  max-height: 0px !important;
+  overflow: hidden !important;
+  transition: max-height 1s cubic-bezier(0, 1, 0, 1);
+}
+.display {
+  max-height: 0em !important;
+  transition: max-height 1.5s ease-in-out;
+}
+.logo-img {
+  width: 25px;
+  height: 25px;
+  color: var(--main-color) !important;
+}
+.logo-div {
+  cursor: pointer;
+}
+:has(#home:target) .home {
+  background-color: aqua !important;
+}
+/* ................. Data Section .....................*/
+.data-section {
+  background-attachment: fixed;
+  overflow: auto;
+  background-image: url(../Images/historical-buildings-morocco.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100% 90%;
+  background-color: var(--sec-background-color);
+}
+.search-btn {
+  top: 64%;
+  right: 0%;
+  height: 33%;
+  margin-right: 5px;
+  width: 10%;
+  font-size: var(--font-size-normal);
+}
+.search-box {
+  border: 0px !important;
+  outline: 0 !important;
+  padding: 10px;
+  width: 100%;
+  height: 32px;
+  background-color: var(--header-background-color);
+  font-size: var(--font-size-normal);
+}
+.weather-day-div {
+  width: calc(100% / 3);
+  font-size: var(--font-size-normal);
+}
+.weather-data-div-2 span {
+  font-size: 0.8rem;
+}
+.day-date {
+  background-color: var(--third-background-color);
+}
+.location {
+  font-size: 0.6rem !important;
+}
+.celiouz {
+  font-size: 2.5rem;
+}
+.direction,
+.wind,
+.rain {
+  font-size: 0.5rem !important;
+}
+.addons-icons {
+  font-size: 0.5rem !important;
+}
+/* ................................................. Footer Section ...............................................*/
+.subscribe-button {
+  top: 5px !important;
+  bottom: 5px !important;
+  right: 5px;
+  padding: 8px !important;
+  font-size: var(--font-size-normal);
+}
+.subscribe-button:hover {
+  background-color: var(--sec-color);
+}
+.copyright {
+  font-size: 0.5rem;
+}
+.footer-icons-divs:hover {
+  background-color: var(--main-color);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.footer-icons-divs:hover .footer-icons {
+  color: var(--words-color);
+}
