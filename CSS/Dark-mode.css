@@ -5,8 +5,8 @@
 * JS + Bootstrap + Ajax + APIs
 * 23/12/2023
 * Weather Dark mode 
-* Mostafa Badr >> LinkedIn:  
-* Mostafa Badr >> GitHub:  
+* Mostafa Badr >> LinkedIn: https://www.linkedin.com/in/mostafa-badr-610b64208
+* Mostafa Badr >> GitHub: https://github.com/MostafaBadr7
 */
 
 #mode:checked ~ label .light-mode {
@@ -69,24 +69,3 @@ html:not(#mode input:checked) .logo-word {
 html:not(#mode input:checked) .tagline {
   padding-left: 0.3rem !important;
 }
-
-/* :root:has(.mode input:checked) body {
-  --color-hue: 197;
-  --color-sat: 100%;
-  --color-light: 42%;
-  --main-color: hsl(197, 100%, 42%);
-  --muted-color: #bfc1c8;
-  --header-background-color: #1e202b !important;
-  --third-background-color: #0000001a !important;
-  --main-background-color: #262936 !important;
-  --sec-background-color: #1e2028;
-  --words-color: #fff;
-  --sec-color: hsl(var(--color-hue), var(--color-sat), var(--color-light));
-  font-family: "Roboto", "Open Sans", sans-serif;
-  --font-size-normal: 0.5rem;
-  scroll-behavior: smooth;
-  font-size: 2rem;
-} */
-/* .light-contrast {
-  background-color: var(--light-contrast) !important;
-} */

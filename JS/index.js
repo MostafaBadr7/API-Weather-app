@@ -5,8 +5,8 @@
  * JS + Bootstrap + Ajax + APIs
  * 23/12/2023
  * Weather page JS
- * Mostafa Badr >> LinkedIn:
- * Mostafa Badr >> GitHub:
+ * Mostafa Badr >> LinkedIn: https://www.linkedin.com/in/mostafa-badr-610b64208
+ * Mostafa Badr >> GitHub: https://github.com/MostafaBadr7
  */
 
 //..................................... Global varaibles ....................................//
