@@ -1,0 +1,92 @@
+/*  
+* Route - Frontend
+* JS program Week 9
+* Weather Web APP 
+* JS + Bootstrap + Ajax + APIs
+* 23/12/2023
+* Weather Dark mode 
+* Mostafa Badr >> LinkedIn:  
+* Mostafa Badr >> GitHub:  
+*/
+
+#mode:checked ~ label .light-mode {
+  display: none !important;
+  cursor: pointer;
+}
+#mode:checked ~ label .dark-mode {
+  display: block !important;
+  cursor: pointer;
+  background-color: #fff !important;
+  color: black !important;
+}
+#mode:not(:checked) ~ label .dark-mode {
+  display: none !important;
+  transition: all 2s ease-in-out;
+  cursor: pointer;
+}
+#mode:not(:checked) ~ label .light-mode {
+  display: block !important;
+  background-color: #000 !important;
+  cursor: pointer;
+  color: white !important;
+}
+
+:root[data-theme="light"] {
+  --color-hue: 197;
+  --color-sat: 100%;
+  --color-light: 42%;
+  --main-color: hsl(197, 100%, 42%);
+  --muted-color: #405bbb;
+  --header-background-color: #e2e4edac !important;
+  --third-background-color: #26242431 !important;
+  --main-background-color: #dfe2f0 !important;
+  --sec-background-color: #e7eaf51f !important;
+  --words-color: #222121;
+  --sec-color: hsl(var(--color-hue), var(--color-sat), var(--color-light));
+  font-family: "Roboto", "Open Sans", sans-serif;
+  --font-size-normal: 0.5rem;
+  scroll-behavior: smooth;
+  font-size: 2rem;
+  --light-contrast: ##e2e4edac !important;
+  --sec-day-color-inlight: #fff !important;
+  --sec-day-color-inlight-status: var(--sec-day-color-inlight) !important;
+  --inlight-deg: #000;
+  font-size: 2rem;
+  transition: color 0.5s ease-in-out;
+}
+.sec-day-color-inlight {
+  color: var(--sec-day-color-inlight) !important;
+}
+.sec-day-color-inlight-status {
+  color: var(--sec-day-color-inlight-status) !important;
+}
+.inlight-deg {
+  color: var(--inlight-deg) !important;
+}
+html:not(#mode input:checked) .logo-word {
+  padding: 0.2rem !important;
+}
+html:not(#mode input:checked) .tagline {
+  padding-left: 0.3rem !important;
+}
+
+/* :root:has(.mode input:checked) body {
+  --color-hue: 197;
+  --color-sat: 100%;
+  --color-light: 42%;
+  --main-color: hsl(197, 100%, 42%);
+  --muted-color: #bfc1c8;
+  --header-background-color: #1e202b !important;
+  --third-background-color: #0000001a !important;
+  --main-background-color: #262936 !important;
+  --sec-background-color: #1e2028;
+  --words-color: #fff;
+  --sec-color: hsl(var(--color-hue), var(--color-sat), var(--color-light));
+  font-family: "Roboto", "Open Sans", sans-serif;
+  --font-size-normal: 0.5rem;
+  scroll-behavior: smooth;
+  font-size: 2rem;
+} */
+/* .light-contrast {
+  background-color: var(--light-contrast) !important;
+} */

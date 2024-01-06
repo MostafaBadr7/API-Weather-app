@@ -21,7 +21,7 @@
   margin: 0;
   box-sizing: border-box;
 }
-html {
+:root {
   --color-hue: 197;
   --color-sat: 100%;
   --color-light: 42%;
@@ -33,10 +33,14 @@ html {
   --sec-background-color: #1e2028;
   --words-color: #fff;
   --sec-color: hsl(var(--color-hue), var(--color-sat), var(--color-light));
+  --sec-day-color-inlight: var(--muted-color) !important;
+  --sec-day-color-inlight-status: var(--main-color) !important;
+  --inlight-deg: #fff;
   font-family: "Roboto", "Open Sans", sans-serif;
   --font-size-normal: 0.5rem;
   scroll-behavior: smooth;
   font-size: 2rem;
+  transition: all 1s;
 }
 .btn {
   box-shadow: 0px 0px 8px var(--main-color);
@@ -47,29 +51,45 @@ html {
 /* ................. You can change the main color from here .....................*/
 .main-color {
   background-color: var(--main-color) !important;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 .main-color-word {
   color: var(--main-color);
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 .muted-color-word {
-  color: var(--muted-color);
+  color: var(--muted-color) !important;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 .header-bkgrnd-color {
   background-color: var(--header-background-color);
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 .sec-bkgrnd-color {
   background-color: var(--sec-background-color);
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 .words-color {
   color: var(--words-color);
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 .main-bkgrnd-color {
   background-color: var(--main-background-color);
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 .word-font-size {
   font-size: 0.6rem;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
-
+.sec-day-color-inlight {
+  color: var(--sec-day-color-inlight) !important;
+}
+.sec-day-color-inlight-status {
+  color: var(--sec-day-color-inlight-status) !important;
+}
+.inlight-deg {
+  color: var(--inlight-deg) !important;
+}
 /* ................. Header & nav .....................*/
 
 .logo-word {
@@ -87,8 +107,8 @@ nav li {
 .nav-lists-div li:hover {
   color: var(--main-color);
   border: 1px solid var(--main-color) !important;
-  transition: border 0.5 s;
-  border-radius: 7px;
+  transition: border 0.5s;
+  border-radius: 0.5rem;
   border: 1px var(--words-color) solid;
 }
 
@@ -121,8 +141,24 @@ nav li {
 .logo-div {
   cursor: pointer;
 }
-:has(#home:target) .home {
-  background-color: aqua !important;
+.theme-switcher-div {
+  position: fixed;
+  bottom: 50px;
+  left: 50px;
+  border-radius: 50%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+}
+.light-mode,
+.dark-mode {
+  border-radius: 50%;
+  background-color: red;
+  padding: 20px;
+  width: 20px;
+  height: 20px;
 }
 /* ................. Data Section .....................*/
 .data-section {
@@ -175,6 +211,14 @@ nav li {
 .addons-icons {
   font-size: 0.5rem !important;
 }
+.min-temp,
+.max-temp {
+  font-size: var(--font-size-normal) !important;
+}
+body:has(:target) nav li {
+  color: red !important;
+}
+
 /* ................................................. Footer Section ...............................................*/
 .subscribe-button {
   top: 5px !important;
